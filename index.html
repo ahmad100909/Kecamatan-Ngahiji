@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Kecamatan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / KOP SURAT ===================== -->
+  <header class="kop-surat">
+    <div class="container">
+      <div class="lambang">LOGO</div>
+      <div class="identitas-instansi">
+        <p class="baris-kecil">Pemerintah Kabupaten Contoh</p>
+        <h1>Kecamatan Contoh</h1>
+      </div>
+    </div>
+    <!-- data-target menunjuk ke id <div class="halaman"> yang harus ditampilkan.
+         script.js yang mengatur tampil/sembunyikan bagian sesuai menu ini. -->
+    <nav class="nav-utama">
+      <div class="container">
+        <ul>
+          <li><a href="#beranda" data-target="beranda" class="aktif">Beranda</a></li>
+          <li><a href="#pelayanan" data-target="pelayanan">Info Pelayanan / Publik</a></li>
+          <li><a href="#lapor" data-target="lapor">Lapor</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- =====================================================================
+       BAGIAN 1: BERANDA
+       ===================================================================== -->
+  <div class="halaman" id="beranda">
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Portal Resmi Kecamatan</p>
+        <h2>Layanan dan informasi kecamatan, dalam satu tempat.</h2>
+        <p>Cek profil kecamatan, ikuti kegiatan terbaru, dan akses layanan publik tanpa perlu datang berkali-kali ke kantor.</p>
+        <a href="#pelayanan" class="tombol" data-target="pelayanan">Lihat Layanan Publik</a>
+        <a href="#lapor" class="tombol sekunder" data-target="lapor" style="margin-left:10px;">Sampaikan Laporan</a>
+      </div>
+    </section>
+
+    <!-- PROFIL KECAMATAN -->
+    <section class="blok">
+      <div class="container">
+        <div class="judul-blok">
+          <h3>Profil Kecamatan</h3>
+          <div class="garis"></div>
+        </div>
+        <div class="grid-3">
+          <div class="kartu">
+            <h4>Tentang Kami</h4>
+            <p>Ganti teks ini dengan sejarah singkat, wilayah, dan jumlah penduduk kecamatan. Tulis dengan bahasa yang mudah dipahami warga.</p>
+          </div>
+          <div class="kartu">
+            <h4>Visi &amp; Misi</h4>
+            <p>Ganti teks ini dengan visi dan misi kecamatan sesuai dokumen resmi yang berlaku.</p>
+          </div>
+          <div class="kartu">
+            <h4>Struktur Organisasi</h4>
+            <p>Ganti teks ini dengan nama Camat, Sekretaris Kecamatan, dan kepala seksi. Bisa ditambah foto/bagan di sini nanti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFORMASI KEGIATAN -->
+    <section class="blok selang">
+      <div class="container">
+        <div class="judul-blok">
+          <h3>Informasi Kegiatan</h3>
+          <div class="garis"></div>
+        </div>
+        <div class="grid-3">
+          <div class="kartu">
+            <h4>Musyawarah Desa</h4>
+            <p>Contoh berita kegiatan. Ganti dengan judul, tanggal, dan ringkasan kegiatan sebenarnya.</p>
+          </div>
+          <div class="kartu">
+            <h4>Vaksinasi Massal</h4>
+            <p>Contoh berita kegiatan lainnya. Setiap kartu bisa ditautkan ke halaman berita lengkap.</p>
+          </div>
+          <div class="kartu">
+            <h4>Pelatihan UMKM</h4>
+            <p>Contoh berita kegiatan lainnya. Tambahkan kartu baru dengan menyalin blok <code>.kartu</code> ini.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AKTIVITAS HARIAN -->
+    <section class="blok">
+      <div class="container">
+        <div class="judul-blok">
+          <h3>Aktivitas Harian</h3>
+          <div class="garis"></div>
+        </div>
+        <ul class="agenda">
+          <li>
+            <span class="jam">08.00</span>
+            <span>Pelayanan loket dibuka — pengurusan e-KTP, surat, dan perizinan.</span>
+          </li>
+          <li>
+            <span class="jam">10.00</span>
+            <span>Rapat koordinasi internal staf kecamatan.</span>
+          </li>
+          <li>
+            <span class="jam">13.00</span>
+            <span>Kunjungan lapangan / monitoring wilayah.</span>
+          </li>
+          <li>
+            <span class="jam">15.30</span>
+            <span>Pelayanan loket ditutup.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================================
+       BAGIAN 2: INFO PELAYANAN / PUBLIK
+       ===================================================================== -->
+  <div class="halaman" id="pelayanan" hidden>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Layanan Publik</p>
+        <h2>Tiga layanan utama, syarat jelas sejak awal.</h2>
+        <p>Pilih jenis layanan di bawah untuk melihat syarat, alur, dan estimasi waktu penyelesaian.</p>
+      </div>
+    </section>
+
+    <section class="blok">
+      <div class="container">
+        <div class="judul-blok">
+          <h3>Jenis Layanan</h3>
+          <div class="garis"></div>
+        </div>
+
+        <div class="grid-3">
+
+          <!-- e-KTP -->
+          <div class="kartu-layanan">
+            <span class="kode">Kependudukan</span>
+            <h4>e-KTP</h4>
+            <p>Pembuatan atau perekaman KTP elektronik baru, penggantian karena rusak/hilang, atau perubahan data.</p>
+            <ul>
+              <li>Fotokopi Kartu Keluarga</li>
+              <li>Surat pengantar RT/RW</li>
+              <li>Datang langsung untuk foto &amp; sidik jari</li>
+            </ul>
+            <a href="#lapor" class="tombol" data-target="lapor">Ajukan Sekarang</a>
+          </div>
+
+          <!-- Surat Keterangan Kerja -->
+          <div class="kartu-layanan">
+            <span class="kode">Surat Keterangan</span>
+            <h4>Surat Keterangan Kerja</h4>
+            <p>Surat resmi kecamatan yang menerangkan status pekerjaan warga, untuk keperluan administrasi.</p>
+            <ul>
+              <li>Fotokopi KTP &amp; KK</li>
+              <li>Surat pengantar dari kelurahan/desa</li>
+              <li>Keterangan tempat &amp; jenis pekerjaan</li>
+            </ul>
+            <a href="#lapor" class="tombol" data-target="lapor">Ajukan Sekarang</a>
+          </div>
+
+          <!-- Perizinan -->
+          <div class="kartu-layanan">
+            <span class="kode">Perizinan</span>
+            <h4>Perizinan</h4>
+            <p>Pengurusan izin usaha mikro, izin keramaian, dan izin lain yang menjadi kewenangan kecamatan.</p>
+            <ul>
+              <li>Fotokopi KTP pemohon</li>
+              <li>Formulir permohonan izin</li>
+              <li>Denah/lokasi (bila diperlukan)</li>
+            </ul>
+            <a href="#lapor" class="tombol" data-target="lapor">Ajukan Sekarang</a>
+          </div>
+
+        </div>
+
+        <p style="color:var(--teks-muda); font-size:0.9rem; margin-top:28px;">
+          Catatan: tombol "Ajukan Sekarang" masih contoh (mengarah ke formulir Lapor).
+          Nanti bisa diarahkan ke formulir online, WhatsApp resmi, atau sistem pelayanan yang dipakai kecamatan.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- =====================================================================
+       BAGIAN 3: LAPOR / PENGADUAN MASYARAKAT
+       ===================================================================== -->
+  <div class="halaman" id="lapor" hidden>
+
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Pengaduan Masyarakat</p>
+        <h2>Sampaikan keluhan, kami tindak lanjuti.</h2>
+        <p>Isi formulir di bawah untuk melaporkan masalah pelayanan, infrastruktur, atau hal lain di wilayah kecamatan.</p>
+      </div>
+    </section>
+
+    <section class="blok">
+      <div class="container">
+
+        <div class="judul-blok">
+          <h3>Formulir Pengaduan</h3>
+          <div class="garis"></div>
+        </div>
+
+        <div id="pesan-nomor" class="catatan-nomor" style="display:none;"></div>
+
+        <form class="form-lapor" id="form-pengaduan">
+          <label for="nama">Nama Pelapor</label>
+          <input type="text" id="nama" name="nama" required>
+
+          <label for="kontak">Nomor HP / WhatsApp</label>
+          <input type="tel" id="kontak" name="kontak" required>
+
+          <label for="kategori">Kategori Laporan</label>
+          <select id="kategori" name="kategori" required>
+            <option value="">Pilih kategori</option>
+            <option value="pelayanan">Pelayanan Kecamatan</option>
+            <option value="infrastruktur">Infrastruktur (jalan, lampu, dll.)</option>
+            <option value="kebersihan">Kebersihan Lingkungan</option>
+            <option value="lainnya">Lainnya</option>
+          </select>
+
+          <label for="isi">Isi Laporan</label>
+          <textarea id="isi" name="isi" placeholder="Jelaskan kejadian, lokasi, dan waktu sejelas mungkin." required></textarea>
+          <small>Laporan akan diproses dalam 1–3 hari kerja.</small>
+
+          <button type="submit" class="tombol">Kirim Laporan</button>
+        </form>
+
+        <p style="color:var(--teks-muda); font-size:0.85rem; max-width:640px; margin-top:14px;">
+          Catatan untuk pengembang: formulir ini masih contoh (nomor tiket dibuat di browser, belum tersimpan ke server/database).
+          Untuk versi nyata, sambungkan tombol "Kirim Laporan" ke backend atau layanan seperti Google Form/Spreadsheet.
+        </p>
+
+        <div class="judul-blok" style="margin-top:48px;">
+          <h3>Contoh Status Laporan</h3>
+          <div class="garis"></div>
+        </div>
+
+        <div class="grid-3">
+          <div class="kartu">
+            <h4>#0001 — Lampu jalan mati</h4>
+            <p>Jl. Melati, RT 03/RW 02 <br><span class="status proses">Diproses</span></p>
+          </div>
+          <div class="kartu">
+            <h4>#0002 — Sampah menumpuk</h4>
+            <p>Pasar Contoh <br><span class="status selesai">Selesai</span></p>
+          </div>
+          <div class="kartu">
+            <h4>#0003 — Antrean layanan lambat</h4>
+            <p>Loket Kecamatan <br><span class="status proses">Diproses</span></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+
+  <!-- ===================== FOOTER (tampil di semua bagian) ===================== -->
+  <footer>
+    <div class="container">
+      <span>&copy; 2026 Kecamatan Contoh. Seluruh hak dilindungi.</span>
+      <span>Jl. Contoh No. 1 · (021) 000-0000</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

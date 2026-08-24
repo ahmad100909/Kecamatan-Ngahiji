@@ -1,0 +1,427 @@
+/* ==========================================================================
+   STYLE.CSS — Website Kecamatan
+   Semua warna & ukuran dikumpulkan di :root supaya gampang diubah oleh
+   pemula. Cukup ganti nilai di sini, seluruh halaman ikut berubah.
+   ========================================================================== */
+
+:root {
+  /* --- Warna --- */
+  --biru-tua: #1C3D5A;      /* header, nav, judul besar */
+  --biru-sedang: #2F6690;   /* tombol, link, aksen */
+  --biru-muda: #E7EEF3;     /* latar kartu/section selang-seling */
+  --emas: #C99A2E;          /* garis pemisah ala kop surat, aksen resmi */
+  --krem: #F6F4EF;          /* latar halaman */
+  --putih: #FFFFFF;
+  --teks: #2B2A27;          /* teks utama */
+  --teks-muda: #6B675F;     /* teks sekunder/keterangan */
+  --merah: #B23A2E;         /* status/urgent pada form lapor */
+  --hijau: #2E7D4F;         /* status selesai/berhasil */
+
+  /* --- Tipografi --- */
+  --font-judul: "Fraunces", Georgia, serif;
+  --font-teks: "Inter", "Segoe UI", sans-serif;
+
+  /* --- Ukuran --- */
+  --radius: 6px;
+  --lebar-maks: 1080px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-teks);
+  color: var(--teks);
+  background: var(--krem);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+a { color: var(--biru-sedang); }
+
+.container {
+  max-width: var(--lebar-maks);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   HEADER — gaya "kop surat" resmi: lambang + nama kecamatan, dua garis tipis
+   di bawahnya (emas & biru), meniru header surat dinas.
+   ========================================================================== */
+
+.kop-surat {
+  background: var(--putih);
+  border-bottom: 3px solid var(--emas);
+  box-shadow: 0 1px 0 var(--biru-tua);
+}
+
+.kop-surat .container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.lambang {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--biru-tua);
+  color: var(--putih);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-judul);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-align: center;
+  flex-shrink: 0;
+  border: 2px solid var(--emas);
+}
+
+.identitas-instansi {
+  flex: 1;
+  min-width: 220px;
+}
+
+.identitas-instansi .baris-kecil {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--teks-muda);
+  margin: 0;
+}
+
+.identitas-instansi h1 {
+  font-family: var(--font-judul);
+  font-size: 1.4rem;
+  margin: 2px 0 0;
+  color: var(--biru-tua);
+}
+
+/* Navigasi */
+nav.nav-utama {
+  background: var(--biru-tua);
+}
+
+nav.nav-utama ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav.nav-utama a {
+  display: block;
+  color: var(--putih);
+  text-decoration: none;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+nav.nav-utama a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+nav.nav-utama a.aktif {
+  border-bottom-color: var(--emas);
+  background: rgba(255,255,255,0.06);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  background: linear-gradient(180deg, var(--biru-tua) 0%, #234a6e 100%);
+  color: var(--putih);
+  padding: 56px 0 64px;
+}
+
+.hero .eyebrow {
+  color: var(--emas);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.hero h2 {
+  font-family: var(--font-judul);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 14px;
+  max-width: 640px;
+}
+
+.hero p {
+  max-width: 560px;
+  color: #D9E3EC;
+  margin: 0 0 22px;
+}
+
+.tombol {
+  display: inline-block;
+  background: var(--emas);
+  color: var(--biru-tua);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+
+.tombol:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+
+.tombol.sekunder {
+  background: transparent;
+  color: var(--putih);
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* ==========================================================================
+   SECTION UMUM
+   ========================================================================== */
+
+section.blok {
+  padding: 48px 0;
+}
+
+section.blok.selang {
+  background: var(--biru-muda);
+}
+
+.judul-blok {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.judul-blok .garis {
+  flex: 1;
+  height: 1px;
+  background: var(--emas);
+}
+
+.judul-blok h3 {
+  font-family: var(--font-judul);
+  color: var(--biru-tua);
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.kartu {
+  background: var(--putih);
+  border: 1px solid #E3DFD5;
+  border-radius: var(--radius);
+  padding: 22px;
+}
+
+.kartu h4 {
+  font-family: var(--font-judul);
+  color: var(--biru-tua);
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.kartu p { color: var(--teks-muda); margin: 0; font-size: 0.93rem; }
+
+/* Daftar aktivitas harian (agenda) */
+.agenda {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #E3DFD5;
+}
+
+.agenda li {
+  display: flex;
+  gap: 18px;
+  padding: 14px 0;
+  border-bottom: 1px solid #E3DFD5;
+}
+
+.agenda .jam {
+  font-family: var(--font-judul);
+  color: var(--biru-tua);
+  font-weight: 600;
+  width: 90px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   LAYANAN (kartu e-KTP, Surat Keterangan, Perizinan)
+   ========================================================================== */
+
+.kartu-layanan {
+  background: var(--putih);
+  border: 1px solid #E3DFD5;
+  border-left: 4px solid var(--biru-sedang);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kartu-layanan .kode {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--emas);
+  font-weight: 700;
+}
+
+.kartu-layanan h4 {
+  font-family: var(--font-judul);
+  color: var(--biru-tua);
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.kartu-layanan ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  color: var(--teks-muda);
+  font-size: 0.9rem;
+}
+
+.kartu-layanan .tombol {
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 9px 16px;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   FORM LAPOR / PENGADUAN
+   ========================================================================== */
+
+.form-lapor {
+  background: var(--putih);
+  border: 1px solid #E3DFD5;
+  border-radius: var(--radius);
+  padding: 28px;
+  max-width: 640px;
+}
+
+.form-lapor label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--biru-tua);
+  margin: 16px 0 6px;
+}
+
+.form-lapor label:first-child { margin-top: 0; }
+
+.form-lapor input,
+.form-lapor select,
+.form-lapor textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #CCC6B8;
+  border-radius: var(--radius);
+  font-family: var(--font-teks);
+  font-size: 0.95rem;
+  background: var(--krem);
+}
+
+.form-lapor textarea { min-height: 110px; resize: vertical; }
+
+.form-lapor small {
+  display: block;
+  color: var(--teks-muda);
+  margin-top: 4px;
+  font-size: 0.8rem;
+}
+
+.form-lapor button {
+  margin-top: 22px;
+}
+
+.catatan-nomor {
+  background: var(--biru-muda);
+  border-left: 4px solid var(--biru-sedang);
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* Status badge sederhana untuk daftar pengaduan */
+.status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.status.proses { background: #FBE9CC; color: #8A5A00; }
+.status.selesai { background: #DCEEE1; color: var(--hijau); }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer {
+  background: var(--biru-tua);
+  color: #C7D3DC;
+  margin-top: 40px;
+  padding: 28px 0;
+  font-size: 0.85rem;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ==========================================================================
+   RESPONSIF
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  nav.nav-utama ul { flex-direction: column; }
+  .agenda li { flex-direction: column; gap: 4px; }
+  .agenda .jam { width: auto; }
+  footer .container { flex-direction: column; }
+}
+
+/* Aksesibilitas: fokus keyboard tetap terlihat */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--emas);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tombol:hover { transform: none; }
+}
