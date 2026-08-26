@@ -312,7 +312,11 @@
             required></textarea>
           <small>Laporan akan diproses dalam 1–3 hari kerja.</small>
 
-          <button type="submit" class="tombol">Kirim Laporan</button>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;">
+            <button type="button" class="tombol" id="kirim-wa">Kirim via WhatsApp</button>
+            <button type="button" class="tombol sekunder" id="kirim-email"
+              style="color:var(--biru-tua); border-color:var(--biru-tua);">Kirim via Gmail</button>
+          </div>
         </form>
 
         <p style="color:var(--teks-muda); font-size:0.85rem; max-width:640px; margin-top:14px;">
@@ -335,7 +339,8 @@
             <p>@keccipeundeuy6</p>
           </a>
 
-          <a href="https://www.instagram.com/keccipeundeuy?igsi=MTZvNWlkcmowZzJidA==" target="_blank" class="kartu-sosial">
+          <a href="https://www.instagram.com/keccipeundeuy?igsi=MTZvNWlkcmowZzJidA==" target="_blank"
+            class="kartu-sosial">
             <span class="ikon-sosial instagram">IG</span>
             <h4>Instagram</h4>
             <p>@keccipeundeuy</p>
@@ -354,7 +359,7 @@
 
   </div>
 
-<!-- =====================================================================
+  <!-- =====================================================================
        BAGIAN 4: LAPOR FASILITAS (Jalan, Jembatan, Lampu, dll)
        ===================================================================== -->
   <div class="halaman" id="fasilitas" hidden>
@@ -363,7 +368,8 @@
       <div class="container">
         <p class="eyebrow">Pengaduan Fasilitas Umum</p>
         <h2>Laporkan kerusakan jalan dan fasilitas umum.</h2>
-        <p>Isi formulir di bawah untuk melaporkan jalan rusak, jembatan, lampu jalan, saluran air, atau fasilitas umum lain di wilayah kecamatan.</p>
+        <p>Isi formulir di bawah untuk melaporkan jalan rusak, jembatan, lampu jalan, saluran air, atau fasilitas umum
+          lain di wilayah kecamatan.</p>
       </div>
     </section>
 
@@ -395,10 +401,12 @@
           </select>
 
           <label for="lokasi-fasilitas">Lokasi / Titik Kejadian</label>
-          <input type="text" id="lokasi-fasilitas" name="lokasi-fasilitas" placeholder="Contoh: Jl. Raya Cipeundeuy, dekat RT 03/RW 02" required>
+          <input type="text" id="lokasi-fasilitas" name="lokasi-fasilitas"
+            placeholder="Contoh: Jl. Raya Cipeundeuy, dekat RT 03/RW 02" required>
 
           <label for="deskripsi-fasilitas">Deskripsi Kerusakan</label>
-          <textarea id="deskripsi-fasilitas" name="deskripsi-fasilitas" placeholder="Jelaskan kondisi kerusakan dan sejak kapan terjadi." required></textarea>
+          <textarea id="deskripsi-fasilitas" name="deskripsi-fasilitas"
+            placeholder="Jelaskan kondisi kerusakan dan sejak kapan terjadi." required></textarea>
           <small>Laporan akan diteruskan ke petugas terkait dalam 1–3 hari kerja.</small>
 
           <button type="submit" class="tombol">Kirim Laporan Fasilitas</button>

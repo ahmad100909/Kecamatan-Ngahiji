@@ -43,36 +43,64 @@ window.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// ---------- BAGIAN 2: FORMULIR PENGADUAN ----------
+// ---------- BAGIAN 2: FORMULIR PENGADUAN (Lapor) ----------
 
 const formPengaduan = document.getElementById("form-pengaduan");
+const tombolWA = document.getElementById("kirim-wa");
+const tombolEmail = document.getElementById("kirim-email");
 
-if (formPengaduan) {
-  formPengaduan.addEventListener("submit", function (event) {
-  event.preventDefault();
+function ambilDataLaporan() {
+  return {
+    nama: document.getElementById("nama").value,
+    kontak: document.getElementById("kontak").value,
+    kategori: document.getElementById("kategori").value,
+    isi: document.getElementById("isi").value
+  };
+}
 
-  // Ambil semua isian formulir
-  const nama = document.getElementById("nama").value;
-  const kontak = document.getElementById("kontak").value;
-  const kategori = document.getElementById("kategori").value;
-  const isi = document.getElementById("isi").value;
+if (formPengaduan && tombolWA) {
+  tombolWA.addEventListener("click", function () {
+    if (!formPengaduan.reportValidity()) return; // pastikan semua kolom wajib sudah terisi
 
-  // Nomor WhatsApp kecamatan (ganti dengan nomor asli, format: 62xxxxxxxxxx tanpa + atau 0 di depan)
-  const nomorTujuan = "6283121936308";
+    const data = ambilDataLaporan();
+    const nomorTujuan = "6283121936308";
 
-  // Susun pesan otomatis
-  const pesanWA =
-    "Laporan Pengaduan Masyarakat%0A" +
-    "Nama: " + nama + "%0A" +
-    "Kontak: " + kontak + "%0A" +
-    "Kategori: " + kategori + "%0A" +
-    "Isi Laporan: " + isi;
+    const pesanWA =
+      "Laporan Pengaduan Masyarakat%0A" +
+      "Nama: " + data.nama + "%0A" +
+      "Kontak: " + data.kontak + "%0A" +
+      "Kategori: " + data.kategori + "%0A" +
+      "Isi Laporan: " + data.isi;
 
-  // Buka WhatsApp dengan pesan sudah terisi
-  window.open("https://wa.me/" + nomorTujuan + "?text=" + pesanWA, "_blank");
+    window.open("https://wa.me/" + nomorTujuan + "?text=" + pesanWA, "_blank");
+    formPengaduan.reset();
+  });
+}
 
-  formPengaduan.reset();
-});
+if (formPengaduan && tombolEmail) {
+  tombolEmail.addEventListener("click", function () {
+    if (!formPengaduan.reportValidity()) return;
+
+    const data = ambilDataLaporan();
+
+    // Ganti dengan email resmi kecamatan
+    const emailTujuan = "amudprhn@gmail.com";
+
+    const subjek = "Laporan Pengaduan Masyarakat - " + data.nama;
+    const isiEmail =
+      "Nama: " + data.nama + "\n" +
+      "Kontak: " + data.kontak + "\n" +
+      "Kategori: " + data.kategori + "\n" +
+      "Isi Laporan: " + data.isi;
+
+    const linkGmail =
+      "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(emailTujuan) +
+      "&su=" + encodeURIComponent(subjek) +
+      "&body=" + encodeURIComponent(isiEmail);
+
+    window.open(linkGmail, "_blank");
+    formPengaduan.reset();
+  });
 }
 
 // ---------- BAGIAN 3: SLIDER BERITA (Informasi Kegiatan) ----------
