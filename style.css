@@ -460,7 +460,8 @@ select:focus-visible {
 .slide-berita img {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--krem);
 }
 
 .slide-teks { padding: 22px; }
