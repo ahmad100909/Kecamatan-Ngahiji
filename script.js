@@ -139,3 +139,34 @@ if (sliderTrack) {
 
   mulaiOtomatis();
 }
+
+// ---------- BAGIAN 4: FORMULIR LAPOR FASILITAS ----------
+
+const formFasilitas = document.getElementById("form-fasilitas");
+
+if (formFasilitas) {
+  formFasilitas.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const nama = document.getElementById("nama-fasilitas").value;
+    const kontak = document.getElementById("kontak-fasilitas").value;
+    const jenis = document.getElementById("jenis-fasilitas").value;
+    const lokasi = document.getElementById("lokasi-fasilitas").value;
+    const deskripsi = document.getElementById("deskripsi-fasilitas").value;
+
+    // Nomor WhatsApp kecamatan (boleh sama atau beda dengan nomor Lapor umum)
+    const nomorTujuan = "6283121936308";
+
+    const pesanWA =
+      "Laporan Kerusakan Fasilitas Umum%0A" +
+      "Nama: " + nama + "%0A" +
+      "Kontak: " + kontak + "%0A" +
+      "Jenis Fasilitas: " + jenis + "%0A" +
+      "Lokasi: " + lokasi + "%0A" +
+      "Deskripsi: " + deskripsi;
+
+    window.open("https://wa.me/" + nomorTujuan + "?text=" + pesanWA, "_blank");
+
+    formFasilitas.reset();
+  });
+}
