@@ -49,24 +49,28 @@ const formPengaduan = document.getElementById("form-pengaduan");
 
 if (formPengaduan) {
   formPengaduan.addEventListener("submit", function (event) {
-    event.preventDefault(); // mencegah halaman reload
+  event.preventDefault();
 
-    const nama = document.getElementById("nama").value;
+  // Ambil semua isian formulir
+  const nama = document.getElementById("nama").value;
+  const kontak = document.getElementById("kontak").value;
+  const kategori = document.getElementById("kategori").value;
+  const isi = document.getElementById("isi").value;
 
-    // TODO: kirim data ke server/backend/Google Sheet di sini,
-    // misalnya dengan fetch("URL_API", { method: "POST", body: ... })
+  // Nomor WhatsApp kecamatan (ganti dengan nomor asli, format: 62xxxxxxxxxx tanpa + atau 0 di depan)
+  const nomorTujuan = "6283121936308";
 
-    // Nomor tiket contoh (hanya simulasi tampilan, belum tersimpan permanen)
-    const nomorTiket = "LP-" + Date.now().toString().slice(-6);
+  // Susun pesan otomatis
+  const pesanWA =
+    "Laporan Pengaduan Masyarakat%0A" +
+    "Nama: " + nama + "%0A" +
+    "Kontak: " + kontak + "%0A" +
+    "Kategori: " + kategori + "%0A" +
+    "Isi Laporan: " + isi;
 
-    const pesan = document.getElementById("pesan-nomor");
-    pesan.style.display = "block";
-    pesan.innerHTML =
-      "Terima kasih, <strong>" + nama + "</strong>. " +
-      "Laporan Anda tercatat dengan nomor tiket <strong>" + nomorTiket + "</strong>. " +
-      "Simpan nomor ini untuk memantau status laporan.";
+  // Buka WhatsApp dengan pesan sudah terisi
+  window.open("https://wa.me/" + nomorTujuan + "?text=" + pesanWA, "_blank");
 
-    formPengaduan.reset();
-    pesan.scrollIntoView({ behavior: "smooth", block: "center" });
-  });
+  formPengaduan.reset();
+});
 }
