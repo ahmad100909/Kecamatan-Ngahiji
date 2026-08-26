@@ -433,3 +433,103 @@ select:focus-visible {
   html { scroll-behavior: auto; }
   .tombol:hover { transform: none; }
 }
+
+/* ==========================================================================
+   SLIDER BERITA (Informasi Kegiatan) — otomatis bergeser
+   ========================================================================== */
+
+.slider-berita {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--putih);
+  border: 1px solid #E3DFD5;
+}
+
+.slider-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-berita {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-berita img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.slide-teks { padding: 22px; }
+
+.slide-tanggal {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--emas);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.slide-teks h4 {
+  font-family: var(--font-judul);
+  color: var(--biru-tua);
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+}
+
+.slide-teks p {
+  color: var(--teks-muda);
+  margin: 0;
+  font-size: 0.93rem;
+}
+
+.slider-tombol {
+  position: absolute;
+  top: 130px;
+  transform: translateY(-50%);
+  background: rgba(28,61,90,0.75);
+  color: var(--putih);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-tombol:hover { background: var(--biru-tua); }
+.slider-tombol.prev { left: 12px; }
+.slider-tombol.next { right: 12px; }
+
+.slider-titik {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 0;
+}
+
+.slider-titik button {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: #D8D2C4;
+  cursor: pointer;
+  padding: 0;
+}
+
+.slider-titik button.aktif { background: var(--emas); }
+
+@media (max-width: 640px) {
+  .slide-berita img { height: 200px; }
+  .slider-tombol { top: 100px; }
+}

@@ -74,3 +74,68 @@ if (formPengaduan) {
   formPengaduan.reset();
 });
 }
+
+// ---------- BAGIAN 3: SLIDER BERITA (Informasi Kegiatan) ----------
+
+const sliderTrack = document.getElementById("slider-track");
+const sliderTitikWadah = document.getElementById("slider-titik");
+const tombolPrev = document.getElementById("slider-prev");
+const tombolNext = document.getElementById("slider-next");
+
+if (sliderTrack) {
+  const semuaSlide = sliderTrack.querySelectorAll(".slide-berita");
+  let indeksAktif = 0;
+  let waktuOtomatis;
+
+  // Buat titik indikator sesuai jumlah slide (otomatis, tidak perlu diketik manual)
+  semuaSlide.forEach(function (_, i) {
+    const titik = document.createElement("button");
+    if (i === 0) titik.classList.add("aktif");
+    titik.addEventListener("click", function () {
+      pindahKeSlide(i);
+      resetOtomatis();
+    });
+    sliderTitikWadah.appendChild(titik);
+  });
+
+  const semuaTitik = sliderTitikWadah.querySelectorAll("button");
+
+  function pindahKeSlide(indeks) {
+    indeksAktif = indeks;
+    sliderTrack.style.transform = "translateX(-" + (indeksAktif * 100) + "%)";
+    semuaTitik.forEach(function (t, i) {
+      t.classList.toggle("aktif", i === indeksAktif);
+    });
+  }
+
+  function slideBerikutnya() {
+    const berikutnya = (indeksAktif + 1) % semuaSlide.length; // kembali ke slide pertama setelah yang terakhir
+    pindahKeSlide(berikutnya);
+  }
+
+  function slideSebelumnya() {
+    const sebelumnya = (indeksAktif - 1 + semuaSlide.length) % semuaSlide.length;
+    pindahKeSlide(sebelumnya);
+  }
+
+  function mulaiOtomatis() {
+    waktuOtomatis = setInterval(slideBerikutnya, 4000); // ganti slide tiap 4 detik
+  }
+
+  function resetOtomatis() {
+    clearInterval(waktuOtomatis);
+    mulaiOtomatis();
+  }
+
+  tombolNext.addEventListener("click", function () {
+    slideBerikutnya();
+    resetOtomatis();
+  });
+
+  tombolPrev.addEventListener("click", function () {
+    slideSebelumnya();
+    resetOtomatis();
+  });
+
+  mulaiOtomatis();
+}

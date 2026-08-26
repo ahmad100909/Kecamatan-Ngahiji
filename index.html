@@ -75,26 +75,55 @@
     </section>
 
     <!-- INFORMASI KEGIATAN -->
+    <<!-- INFORMASI KEGIATAN -->
     <section class="blok selang">
       <div class="container">
         <div class="judul-blok">
           <h3>Informasi Kegiatan</h3>
           <div class="garis"></div>
         </div>
-        <div class="grid-3">
-          <div class="kartu">
-            <h4>Musyawarah Desa</h4>
-            <p>Contoh berita kegiatan. Ganti dengan judul, tanggal, dan ringkasan kegiatan sebenarnya.</p>
+
+        <!-- Slider berita: otomatis bergeser tiap 4 detik -->
+        <div class="slider-berita" id="slider-berita">
+
+          <div class="slider-track" id="slider-track">
+
+            <article class="slide-berita">
+              <img src="images/kegiatan-1.jpg" alt="Musyawarah Desa">
+              <div class="slide-teks">
+                <span class="slide-tanggal">20 Agustus 2026</span>
+                <h4>Musyawarah Desa</h4>
+                <p>Contoh berita kegiatan. Ganti dengan judul, tanggal, dan ringkasan kegiatan sebenarnya.</p>
+              </div>
+            </article>
+
+            <article class="slide-berita">
+              <img src="images/kegiatan-2.jpg" alt="Vaksinasi Massal">
+              <div class="slide-teks">
+                <span class="slide-tanggal">15 Agustus 2026</span>
+                <h4>Vaksinasi Massal</h4>
+                <p>Contoh berita kegiatan lainnya. Setiap slide bisa ditautkan ke halaman berita lengkap.</p>
+              </div>
+            </article>
+
+            <article class="slide-berita">
+              <img src="images/kegiatan-3.jpg" alt="Pelatihan UMKM">
+              <div class="slide-teks">
+                <span class="slide-tanggal">10 Agustus 2026</span>
+                <h4>Pelatihan UMKM</h4>
+                <p>Contoh berita kegiatan lainnya. Tambahkan slide baru dengan menyalin blok <code>.slide-berita</code> ini.</p>
+              </div>
+            </article>
+
           </div>
-          <div class="kartu">
-            <h4>Vaksinasi Massal</h4>
-            <p>Contoh berita kegiatan lainnya. Setiap kartu bisa ditautkan ke halaman berita lengkap.</p>
-          </div>
-          <div class="kartu">
-            <h4>Pelatihan UMKM</h4>
-            <p>Contoh berita kegiatan lainnya. Tambahkan kartu baru dengan menyalin blok <code>.kartu</code> ini.</p>
-          </div>
+
+          <button class="slider-tombol prev" id="slider-prev" aria-label="Sebelumnya">&#8249;</button>
+          <button class="slider-tombol next" id="slider-next" aria-label="Berikutnya">&#8250;</button>
+
+          <div class="slider-titik" id="slider-titik"></div>
+
         </div>
+
       </div>
     </section>
 
