@@ -96,12 +96,12 @@ if (formPengaduan && tombolEmail) {
       "Kategori: " + data.kategori + "\n" +
       "Isi Laporan: " + data.isi;
 
-    const linkGmail =
-      "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(emailTujuan) +
-      "&su=" + encodeURIComponent(subjek) +
+    const linkEmail =
+      "mailto:" + encodeURIComponent(emailTujuan) +
+      "?subject=" + encodeURIComponent(subjek) +
       "&body=" + encodeURIComponent(isiEmail);
 
-    window.open(linkGmail, "_blank");
+    window.location.href = linkEmail;
     formPengaduan.reset();
   });
 }
