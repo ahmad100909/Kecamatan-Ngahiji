@@ -198,3 +198,19 @@ if (formFasilitas) {
     formFasilitas.reset();
   });
 }
+
+// ---------- BAGIAN 5: TAMPILKAN NAMA FILE YANG DIPILIH ----------
+
+const inputDokumen = document.getElementById("dokumen");
+const labelNamaFile = document.getElementById("nama-file-terpilih");
+
+if (inputDokumen && labelNamaFile) {
+  inputDokumen.addEventListener("change", function () {
+    if (inputDokumen.files.length > 0) {
+      labelNamaFile.textContent = "File terpilih: " + inputDokumen.files[0].name +
+        " — jangan lupa lampirkan manual saat mengirim.";
+    } else {
+      labelNamaFile.textContent = "Format: PDF, JPG, atau PNG. Maks. 5MB.";
+    }
+  });
+}

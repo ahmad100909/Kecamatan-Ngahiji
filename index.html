@@ -302,7 +302,7 @@
           <select id="kategori" name="kategori" required>
             <option value="">Pilih kategori</option>
             <option value="pelayanan">Cetak E-KTP</option>
-            <option value="infrastruktur">Pembuatan Surat Ketereangan kerja</option>
+            <option value="infrastruktur">Pembuatan Surat Keterangan kerja</option>
             <option value="kebersihan">Perizinan (Usaha, IzinKeramaian, dll)</option>
             <option value="lainnya">Lainnya</option>
           </select>
@@ -311,6 +311,15 @@
           <textarea id="isi" name="isi" placeholder="Jelaskan kejadian, lokasi, dan waktu sejelas mungkin."
             required></textarea>
           <small>Laporan akan diproses dalam 1–3 hari kerja.</small>
+          <label for="dokumen">Lampirkan Dokumen (opsional)</label>
+          <input type="file" id="dokumen" name="dokumen" accept=".pdf,.jpg,.jpeg,.png">
+          <small id="nama-file-terpilih">Format: PDF, JPG, atau PNG. Maks. 5MB.</small>
+
+          <div class="catatan-nomor" style="margin-top:14px; background:#FBE9CC; border-left-color:#C99A2E;">
+            <strong>Penting:</strong> file yang dipilih di sini <strong>tidak otomatis terkirim</strong>.
+            Setelah tombol "Kirim via WhatsApp/Gmail" mengarahkan Anda ke aplikasi, silakan
+            lampirkan file tersebut secara manual sebelum menekan kirim di sana.
+          </div>
 
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:22px;">
             <button type="button" class="tombol" id="kirim-wa">Kirim via WhatsApp</button>
