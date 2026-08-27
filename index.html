@@ -258,8 +258,8 @@
         </div>
 
         <p style="color:var(--teks-muda); font-size:0.9rem; margin-top:28px;">
-          Catatan: tombol "Ajukan Sekarang" masih contoh (mengarah ke formulir Lapor).
-          Nanti bisa diarahkan ke formulir online, WhatsApp resmi, atau sistem pelayanan yang dipakai kecamatan.
+          Catatan: Silakan periksa persyaratan dan prosedur sebelum mengajukan layanan. 
+          Pastikan seluruh dokumen yang diperlukan telah disiapkan.
         </p>
       </div>
     </section>
@@ -274,9 +274,9 @@
 
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Pengaduan Masyarakat</p>
-        <h2>Sampaikan keluhan, kami tindak lanjuti.</h2>
-        <p>Isi formulir di bawah untuk melaporkan masalah pelayanan, infrastruktur, atau hal lain di wilayah kecamatan.
+        <p class="eyebrow">Pengajuan layanan</p>
+        <h2>Ajukan layanan kecamatan dengan mudah</h2>
+        <p>Pilih jenis layanan yang diperlukan dan lengkapi data serta persyaratan untuk mengajukan permohonan
         </p>
       </div>
     </section>
@@ -285,18 +285,21 @@
       <div class="container">
 
         <div class="judul-blok">
-          <h3>Formulir Pengajuan</h3>
+          <h3>Formulir Pengajuan Layanan</h3>
           <div class="garis"></div>
         </div>
 
         <div id="pesan-nomor" class="catatan-nomor" style="display:none;"></div>
 
         <form class="form-lapor" id="form-pengaduan">
-          <label for="nama">Nama Pengajuan</label>
+          <label for="nama">Nama Pemohon</label>
           <input type="text" id="nama" name="nama" required>
 
-          <label for="kontak">Nik/Nis</label>
+          <label for="kontak">Nik</label>
           <input type="tel" id="kontak" name="kontak" required>
+
+          <label for="nomor-kk">Nomor KK</label>
+          <input type="tel" id="nomor-kk" name="nomor-kk" placeholder="16 digit sesuai kartu keluarga" maxlength="16" required>
 
           <label for="kategori">Kategori Laporan</label>
           <select id="kategori" name="kategori" required>
@@ -329,10 +332,8 @@
         </form>
 
         <p style="color:var(--teks-muda); font-size:0.85rem; max-width:640px; margin-top:14px;">
-          Catatan untuk pengembang: formulir ini masih contoh (
-
-          tiket dibuat di browser, belum tersimpan ke server/database).
-          Untuk versi nyata, sambungkan tombol "Kirim Laporan" ke backend atau layanan seperti Google Form/Spreadsheet.
+          Catatan: Mohon isi data laporan dengan lengkap dan jelas. Sertakan lokasi kejadian serta dokumen atau foto pendukung 
+          apabila diperlukan agar laporan dapat ditindaklanjuti dengan lebih mudah.
         </p>
 
         <div class="judul-blok" style="margin-top:48px;">

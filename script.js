@@ -53,6 +53,7 @@ function ambilDataLaporan() {
   return {
     nama: document.getElementById("nama").value,
     kontak: document.getElementById("kontak").value,
+    nomorKK: document.getElementById("nomor-kk").value,
     kategori: document.getElementById("kategori").value,
     isi: document.getElementById("isi").value
   };
@@ -69,6 +70,7 @@ if (formPengaduan && tombolWA) {
       "Laporan Pengaduan Masyarakat%0A" +
       "Nama: " + data.nama + "%0A" +
       "Kontak: " + data.kontak + "%0A" +
+      "Nomor Kk: " + data.nomorKK + "%0A" +
       "Kategori: " + data.kategori + "%0A" +
       "Isi Laporan: " + data.isi;
 
@@ -90,6 +92,7 @@ if (formPengaduan && tombolEmail) {
     const isiEmail =
       "Nama: " + data.nama + "\n" +
       "Kontak: " + data.kontak + "\n" +
+      "Nomor KK: " + data.nomorKK + "\n" +
       "Kategori: " + data.kategori + "\n" +
       "Isi Laporan: " + data.isi;
 
